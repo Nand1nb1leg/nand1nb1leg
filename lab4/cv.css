@@ -1,0 +1,56 @@
+body {
+    font-family: 'Times New Roman', serif;
+    background-color: #b9d7ff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.cv-container {
+    width: 60%;
+    background: #e3dcffee;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    background: linear-gradient(to right, #daa8feee, #1366d3f1);
+    color: #e3dcffee;
+    padding: 10px;
+    border-radius: 10px 5px 10px 5px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+h2 {
+    border-bottom: 2px solid #004aad;
+    padding-bottom: 5px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 5px 0;
+}
+
+section {
+    margin: 20px 0;
+}
+.awards, .experience, .education, .skills, .info {
+    padding: 10px;
+    background: #f7f9fffc;
+    margin-bottom: 1px;
+    border-left: 3px solid #004aad;
+    border-radius: 10px 5px 10px 5px
+}
+.imageflex {display: flex;}
+.imageflexcontent {margin-left: 5px; margin-top: 2px}
