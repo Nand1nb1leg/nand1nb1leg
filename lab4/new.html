@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nandinbileg's CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Verdana, sans-serif;
+            background-size: cover;
+            color: white;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 15%;
+            background: black;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sidebar img {
+            width: 175px;
+            height: 250px;
+            border-radius: 10%;
+            margin-bottom: 10px;
+            
+        }
+        .sidebar nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 0;
+            font-size: 18px;
+        }
+        .sidebar nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            display: none; 
+            background: url("2009-060-6-9059247e05.png") repeat fixed;
+            color: black;
+            position: relative
+        }
+        .content.active {
+            display: block;
+        }
+        .content h1 {
+            font-size: 44px;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <img src="odyssey.jpg"><br><br>
+            <nav>
+                <a href="#" onclick="showSection('home')">HOME</a><br>
+                <a href="#" onclick="showSection('about')">ABOUT</a><br>
+                <a href="#" onclick="showSection('contact')">CONTACT</a><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <p style="color:aliceblue">&copy; 2025</p>
+            </nav>
+        </div>
+        <div class="content" id="home">
+            <h1>Hello,</h1><br>
+            <h2>I'm Nandinbileg</h2><br>
+            <p>Information systems student</p><br>
+            <p><img src="collab3.jpg" alt="picture" height="300px" width="450px"></p>
+        </div>
+        <div class="content" id="about">
+            <h1>About Me</h1><br>
+            <p><img src="Screenshot 2025-03-19 at 08.15.20.png" alt="CV" height="500px"></p>
+        </div>
+        <div class="content" id="contact">
+            <h1>Contact Me</h1><br>
+            <p>
+                <img src="phone-solid.svg" height="15px" width="15px" alt="Image" style="filter: invert(94%) sepia(10%) saturate(737%) hue-rotate(253deg) brightness(105%) contrast(105%);" style="image"><i>+976-89155198</i>
+            </p>
+            <p><img src="location-dot-solid.svg" height="15px" width="15px" alt="Image"> ЧД, 3-р хороо, “Хурдын” 40-8<br><br>
+                <img src="globe-solid.svg" height="15px" width="15px" alt="Image"> aboutme.html<br><br></p>
+        </div>
+    </div>
+
+    <script>
+        function showSection(section) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show the selected section
+            const selectedSection = document.getElementById(section);
+            selectedSection.classList.add('active');
+        }
+
+        // Initially show the home section
+        showSection('home');
+    </script>
+</body>
+</html>
