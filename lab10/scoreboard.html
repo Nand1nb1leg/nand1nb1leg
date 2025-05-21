@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman - Scoreboard</title>
+    <link rel="stylesheet" href="game.css">
+    <style>
+        .scoreboard-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            background: url('480777995_122204656640189654_4843017091777853815_n.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+        }
+
+        .scoreboard-box {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .scoreboard-box h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #66ccff; /* Light blue for scoreboard */
+        }
+
+        #scores-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        #scores-list li {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1em;
+        }
+
+        #scores-list li strong {
+            color: #aaffaa;
+        }
+
+        .scoreboard-box button {
+            padding: 15px 30px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .scoreboard-box button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="scoreboard-container">
+        <div class="scoreboard-box">
+            <h1>Шилдэг Оноо</h1>
+            <ul id="scores-list">
+                </ul>
+            <button onclick="location.href='index.html'">Эхлэл хуудас</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const scoresList = document.getElementById('scores-list');
+            const topScores = JSON.parse(localStorage.getItem('hangmanTopScores')) || [];
+
+            if (topScores.length === 0) {
+                scoresList.innerHTML = '<li>Одоогоор оноо байхгүй байна.</li>';
+            } else {
+                scoresList.innerHTML = topScores.map((score, index) => `
+                    <li>
+                        <span>${index + 1}. ${score.nickname}</span>
+                        <strong>Оноо: ${score.score}</strong>
+                    </li>
+                `).join('');
+            }
+        });
+    </script>
+</body>
+</html>
