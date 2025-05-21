@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bodlogo7</title>
+</head>
+
+<body>
+    <script>
+    var date = new Date();
+    var hour = date.getHours();
+    
+    if (hour >= 6 && hour < 12) {
+        // Өглөө: ногоон дөрвөлжин зүүн дээд хэсэгт
+        document.writeln(
+            '<div style="position:fixed; width:100px; height:100px; background:green; top:0; left:0;"></div>'
+        );
+    } else if (hour >= 18 || hour < 6) {
+        // Орой: улаан дөрвөлжин баруун доод хэсэгт
+        document.writeln(
+            '<div style="position:fixed; width:100px; height:100px; background:red; bottom:0; right:0;"></div>'
+        );
+    }
+    </script>
+</body>
+</html>

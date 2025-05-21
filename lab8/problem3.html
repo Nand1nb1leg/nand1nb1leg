@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>isPrime</title>
+</head>
+<body>
+    <script>
+        document.writeln("<p>3. Гараас өгсөн тоог анхны тоонуудын нийлбэрт задал</p>")
+        var number = window.prompt("Enter a number");
+        var primeNumber = "";
+
+        for (var i = 2; i <= number; i++) {
+            while (number % i === 0) {
+                primeNumber += i + " ";
+                number = number / i;
+            }
+        }
+        alert("Анхны тоон үржигдэхүүнүүд: " + primeNumber);
+    </script>
+</body>

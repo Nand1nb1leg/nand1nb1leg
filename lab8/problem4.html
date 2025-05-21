@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrom</title>
+</head>
+
+<body>
+    <script>
+        document.writeln("<p>4. Чоно 25 км/ц хурдтай, туулай 18 км/ц хурдтай. Гараас өгсөн зайтай байхад хэдэн минут хэдэн секундын дараа гэхэд гүйцэх вэ</p>")
+        var distance = parseFloat(window.prompt("Enter a distance:"));
+        var wolfSpeed = 25; 
+        var rabbitSpeed = 18; 
+        var relativeSpeed = wolfSpeed - rabbitSpeed; 
+
+        if (relativeSpeed <= 0) {
+            alert("Чоно туулайг гүйцэхгүй.");
+        } else {
+            var timeInHours = distance / relativeSpeed;
+            var totalSeconds = timeInHours * 3600;
+            var minutes = Math.floor(totalSeconds / 60);
+            var seconds = Math.floor(totalSeconds % 60);
+            alert("Гүйцэх хугацаа: " + minutes + " минут " + seconds + " секунд");
+        }
+    </script>
+</body>
+</html>
