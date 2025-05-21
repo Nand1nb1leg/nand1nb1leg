@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrom</title>
+</head>
+<body>
+    <script>
+        document.writeln("<p>2. Гараас өгсөн тооны цифрүүдийн нийлбэрийг ол</p>")
+        var apartmentNumber = parseInt(window.prompt("Тоотыг оруулна уу:"));
+        if (isNaN(apartmentNumber) || apartmentNumber <= 0) {
+            alert("Буруу тоот оруулсан байна.");
+        } else {
+            var apartmentsPerEntrance = 9 * 4; // Давхар * Айл
+            var entranceNumber = Math.ceil(apartmentNumber / apartmentsPerEntrance);
+            var remainingApartments = apartmentNumber % apartmentsPerEntrance;
+            var floorNumber = Math.ceil(remainingApartments / 4);
+            var doorNumber = remainingApartments % 4 === 0 ? 4 : remainingApartments % 4;
+
+            alert(entranceNumber + "-р орцны " + floorNumber + "-р давхарын " + doorNumber + " дэх хаалга");
+        }
+    </script>
+</body>
+</html>

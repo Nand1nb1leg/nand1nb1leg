@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman - Хожигдлоо</title>
+    <link rel="stylesheet" href="game.css">
+    <style>
+        .game-over-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            background: url('paintings/480777995_122204656640189654_4843017091777853815_n.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+        }
+
+        .game-over-box {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .game-over-box h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #ff4d4d; /* Red color for game over */
+        }
+
+        .game-over-box p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .game-over-box button {
+            padding: 15px 30px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .game-over-box button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-over-container">
+        <div class="game-over-box">
+            <h1>Та хожигдлоо!</h1>
+            <p>Харамсалтай байна, та үгийг тааж чадсангүй.</p>
+            <button onclick="location.href='index.html'">Дахин эхлэх</button>
+        </div>
+    </div>
+</body>
+</html>

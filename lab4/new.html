@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nandinbileg's CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Verdana, sans-serif;
+            background-size: cover;
+            color: white;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 250px;
+            background: black;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sidebar img {
+            width: 175px;
+            height: 250px;
+            border-radius: 10%;
+            margin-bottom: 20px;
+            object-fit: cover;
+            border: 3px solid #ecf0f1;
+            
+        }
+        .sidebar nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 0;
+            font-size: 18px;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+        .sidebar nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .content {
+            flex: 1;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            display: none; 
+            background: url("2009-060-6-9059247e05.png") no-repeat center center fixed;
+            color: black;
+            position: relative;
+            margin-left: 2em;
+            overflow-y: auto;
+           
+        }
+        .content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.85);
+            z-index: 0;
+        }
+        .content > * {
+            position: relative;
+            z-index: 1;
+        }
+        .content.active {
+            display: block;
+        }
+        .content h1 {
+            font-size: 44px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            border-bottom: 2px solid #444;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        .content h2 {
+            font-size: 2rem;
+            color: #444;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-top: 20px;
+            color: #555;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .content text {
+            margin-left: 4em;
+            text-decoration: solid;
+            font-size: 16px;
+            font-family: Tahoma, sans-serif;
+        }
+        .content img.main-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            transition: transform 0.3s ease;
+        }
+        .content img.main-image:hover {
+            transform: scale(1.02);
+        }
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+        }
+        .about-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .about-details {
+            flex: 2;
+            min-width: 300px;
+            text-align: left;
+            padding: 0 20px;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: rgba(255,255,255,0.7);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .info-table th, .info-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .info-table th {
+            background-color: #444;
+            color: white;
+            font-weight: 500;
+        }
+        .info-table tr:nth-child(even) {
+            background-color: rgba(0,0,0,0.02);
+        }
+        .info-table tr:hover {
+            background-color: rgba(0,0,0,0.05);
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+        .contact-item img {
+            margin-right: 15px;
+            width: 20px;
+            height: 20px;
+            filter: invert(30%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(90%);
+        }
+        .contact-item a {
+            color: #444;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-item a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .social-links a {
+            color: #444;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 5px;
+            background: rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .social-links a:hover {
+            background: rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                padding: 20px;
+            }
+            .sidebar nav {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+            }
+            .sidebar nav a {
+                padding: 10px;
+                margin: 0;
+            }
+            .content {
+                padding: 30px 20px;
+            }
+            .about-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <img src="odyssey.jpg"><br><br>
+            <nav>
+                <a href="#" onclick="showSection('home')">HOME</a><br>
+                <a href="#" onclick="showSection('about')">ABOUT</a><br>
+                <a href="#" onclick="showSection('contact')">CONTACT</a><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <p style="color:aliceblue">&copy; 2025</p>
+            </nav>
+        </div>
+        <div class="content" id="home">
+            <h1>Hello,</h1><br>
+            <h2>I'm Nandinbileg</h2><br>
+            <p>Information systems student</p><br>
+            <p><img src="collab3.jpg" alt="picture" height="300px" width="450px"></p>
+        </div>
+        <div class="content" id="about">
+            <h1>About Me</h1><br>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="Screenshot 2025-03-19 at 08.15.20.png" alt="CV">
+                </div>
+                <div class="about-details">
+                    <p>I want to become a professional web designer by creating modern, responsive websites and web applications.</p>
+                    
+                    <table class="info-table">
+                        <tr>
+                            <th colspan="2">Personal Information</th>
+                        </tr>
+                        <tr>
+                            <td>Full Name</td>
+                            <td>Nandinbileg</td>
+                        </tr>
+                        <tr>
+                            <td>Occupation</td>
+                            <td>Web Designer & Developer</td>
+                        </tr>
+                        <tr>
+                            <td>Experience</td>
+                            <td>0+ Years</td>
+                        </tr>
+                        <tr>
+                            <td>Education</td>
+                            <td>Information Systems Student</td>
+                        </tr>
+                    </table>
+                    
+                    <table class="info-table">
+                        <tr>
+                            <th colspan="2">Skills</th>
+                        </tr>
+                        <tr>
+                            <td>Web Design</td>
+                            <td>HTML5, CSS3, JavaScript, UI/UX</td>
+                        </tr>
+                        <tr>
+                            <td>Frameworks</td>
+                            <td>React, Bootstrap</td>
+                        </tr>
+                        <tr>
+                            <td>Tools</td>
+                            <td>Photoshop, Figma, VS Code</td>
+                        </tr>
+                        <tr>
+                            <td>Languages</td>
+                            <td>Mongolian, English</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="content" id="contact">
+            <h1>Contact Me</h1>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <img src="phone-solid.svg" alt="Phone">
+                    <span>+976-89155198</span>
+                </div>
+                <div class="contact-item">
+                    <img src="location-dot-solid.svg" alt="Location">
+                    <span>ЧД, 3-р хороо, "Хурдын" 40-8</span>
+                </div>
+                <div class="contact-item">
+                    <img src="globe-solid.svg" alt="Website">
+                    <a href="#">aboutme.html</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/nndnbileg/">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="https://github.com/Nand1nb1leg?tab=repositories">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(section) {
+
+            const sections = document.querySelectorAll('.content');
+            sections.forEach(sec => {
+                sec.classList.remove('active');
+            });
+
+            const navLinks = document.querySelectorAll('.sidebar nav a');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            const selectedSection = document.getElementById(section);
+            selectedSection.classList.add('active');
+
+            event.currentTarget.classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('home');
+            document.querySelector('.sidebar nav a:first-child').classList.add('active');
+        });
+    </script>
+</body>
+</html>
+
+

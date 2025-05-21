@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrom</title>
+</head>
+<body>
+    <script>
+        document.writeln("<p>Хүснэгтэнд (array)-д байгаа утгуудыг тэгш сондгойгоор ялгаж харуул</p>")
+        var arrayStr = window.prompt("Enter the number from array:");
+        var numbers = arrayStr.split(',').map(Number); //split() taslaliig arilgaj zaig zasna, 
+        var even = [];
+        var odd = [];
+
+        for (var i = 0; i < numbers.length; i++) {
+            if (!isNaN(numbers[i])) {
+                if (numbers[i] % 2 === 0) {
+                    even.push(numbers[i]);
+                } else {
+                    odd.push(numbers[i]);
+                }
+            }
+        }
+
+        alert("Тэгш тоонууд: " + even.join(", ") + "\nСондгой тоонууд: " + odd.join(", "));
+    </script>
+</body>
+</html>

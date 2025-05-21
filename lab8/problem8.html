@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Петя</title>
+</head>
+<body>
+    <script>
+        document.writeln("<p>Олимпиадын бодлого: Петя найзтайгаа дараах тоглоомыг тоглож байв. Ширээн дээр n ширхэг зоос байв. Петя эхлээд к тооны зоос авна. Найз нь к+1-ээс хэтрэхгүй тооны зоос авна. Хамгийн сүүлийн зоосыг авсан нь хожигдоно. Петя зайлшгүй хожихийн тулд хамгийн түрүүнд хэдэн зоос авах шаардлагатай вэ? Хожих боломжгүй бол 0 гэсэн утга гарга.</p>")
+        var n = parseInt(window.prompt("Зоосны тоог оруулна уу (n):"));
+        var k = parseInt(window.prompt("Петягийн авах зоосны тоог оруулна уу (k):"));
+
+        if (n <= k) {
+            alert("0"); 
+        } else {
+            if ((n - 1) % (k + 1) === 0) {
+                alert("0"); 
+            } else {
+                alert((n - 1) % (k + 1));
+            }
+        }
+    </script>
+</body>
+</html>

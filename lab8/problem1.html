@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrom</title>
+</head>
+<body>
+    <script>
+        document.writeln("<p>1. Вэб сайтад орсон хүний нэрийг асуугаад нэр нь палиндром мөн эсэхийг шалга.</p>")
+        var name = window.prompt("Enter the name:")
+
+            if(name === name.split('').reverse().join('')){
+                alert("Палиндром мөн");
+            }else{
+                alert("Палиндром биш");
+            }
+            
+    </script>
+</body>
+</html>
